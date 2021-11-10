@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B49B45E2273C0F8700C79134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E1273C0F8700C79134 /* AppDelegate.m */; };
 		B49B45E5273C0F8700C79134 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E4273C0F8700C79134 /* SceneDelegate.m */; };
-		B49B45E8273C0F8700C79134 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E7273C0F8700C79134 /* ViewController.m */; };
+		B49B45E8273C0F8700C79134 /* SCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E7273C0F8700C79134 /* SCMasterViewController.m */; };
 		B49B45EB273C0F8700C79134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49B45E9273C0F8700C79134 /* Main.storyboard */; };
 		B49B45ED273C0F8900C79134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49B45EC273C0F8900C79134 /* Assets.xcassets */; };
 		B49B45F0273C0F8900C79134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49B45EE273C0F8900C79134 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,8 @@
 		B49B45FD273C0F8900C79134 /* ShoppingCartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45FC273C0F8900C79134 /* ShoppingCartTests.m */; };
 		B49B4607273C0F8900C79134 /* ShoppingCartUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B4606273C0F8900C79134 /* ShoppingCartUITests.m */; };
 		B49B4609273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B4608273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m */; };
+		B49B4637273C18DA00C79134 /* SCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4636273C18DA00C79134 /* SCDetailViewController.swift */; };
+		B49B463D273C408000C79134 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B49B463C273C408000C79134 /* FZImageCache */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +44,8 @@
 		B49B45E1273C0F8700C79134 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B49B45E3273C0F8700C79134 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		B49B45E4273C0F8700C79134 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		B49B45E6273C0F8700C79134 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B49B45E7273C0F8700C79134 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B49B45E6273C0F8700C79134 /* SCMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMasterViewController.h; sourceTree = "<group>"; };
+		B49B45E7273C0F8700C79134 /* SCMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMasterViewController.m; sourceTree = "<group>"; };
 		B49B45EA273C0F8700C79134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B49B45EC273C0F8900C79134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B49B45EF273C0F8900C79134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 		B49B4602273C0F8900C79134 /* ShoppingCartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingCartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49B4606273C0F8900C79134 /* ShoppingCartUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartUITests.m; sourceTree = "<group>"; };
 		B49B4608273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B49B4635273C18DA00C79134 /* ShoppingCart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingCart-Bridging-Header.h"; sourceTree = "<group>"; };
+		B49B4636273C18DA00C79134 /* SCDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49B463D273C408000C79134 /* FZImageCache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,7 @@
 				B49B45FB273C0F8900C79134 /* ShoppingCartTests */,
 				B49B4605273C0F8900C79134 /* ShoppingCartUITests */,
 				B49B45DE273C0F8700C79134 /* Products */,
+				B49B4631273C15B600C79134 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,15 +110,14 @@
 		B49B45DF273C0F8700C79134 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				B49B4617273C0FDC00C79134 /* ViewModel */,
+				B49B4616273C0FD000C79134 /* Models */,
+				B49B4615273C0FB400C79134 /* View */,
 				B49B45E0273C0F8700C79134 /* AppDelegate.h */,
 				B49B45E1273C0F8700C79134 /* AppDelegate.m */,
 				B49B45E3273C0F8700C79134 /* SceneDelegate.h */,
 				B49B45E4273C0F8700C79134 /* SceneDelegate.m */,
-				B49B45E6273C0F8700C79134 /* ViewController.h */,
-				B49B45E7273C0F8700C79134 /* ViewController.m */,
-				B49B45E9273C0F8700C79134 /* Main.storyboard */,
 				B49B45EC273C0F8900C79134 /* Assets.xcassets */,
-				B49B45EE273C0F8900C79134 /* LaunchScreen.storyboard */,
 				B49B45F1273C0F8900C79134 /* Info.plist */,
 				B49B45F2273C0F8900C79134 /* main.m */,
 			);
@@ -136,6 +141,40 @@
 			path = ShoppingCartUITests;
 			sourceTree = "<group>";
 		};
+		B49B4615273C0FB400C79134 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B49B45EE273C0F8900C79134 /* LaunchScreen.storyboard */,
+				B49B45E9273C0F8700C79134 /* Main.storyboard */,
+				B49B45E6273C0F8700C79134 /* SCMasterViewController.h */,
+				B49B45E7273C0F8700C79134 /* SCMasterViewController.m */,
+				B49B4636273C18DA00C79134 /* SCDetailViewController.swift */,
+				B49B4635273C18DA00C79134 /* ShoppingCart-Bridging-Header.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B49B4616273C0FD000C79134 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B49B4617273C0FDC00C79134 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B49B4631273C15B600C79134 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +191,9 @@
 			dependencies = (
 			);
 			name = ShoppingCart;
+			packageProductDependencies = (
+				B49B463C273C408000C79134 /* FZImageCache */,
+			);
 			productName = ShoppingCart;
 			productReference = B49B45DD273C0F8700C79134 /* ShoppingCart.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +245,7 @@
 				TargetAttributes = {
 					B49B45DC273C0F8700C79134 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 					};
 					B49B45F7273C0F8900C79134 = {
 						CreatedOnToolsVersion = 13.1;
@@ -223,6 +266,9 @@
 				Base,
 			);
 			mainGroup = B49B45D4273C0F8700C79134;
+			packageReferences = (
+				B49B463B273C408000C79134 /* XCRemoteSwiftPackageReference "FZImageCache" */,
+			);
 			productRefGroup = B49B45DE273C0F8700C79134 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,9 +312,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B49B45E8273C0F8700C79134 /* ViewController.m in Sources */,
+				B49B45E8273C0F8700C79134 /* SCMasterViewController.m in Sources */,
 				B49B45E2273C0F8700C79134 /* AppDelegate.m in Sources */,
 				B49B45F3273C0F8900C79134 /* main.m in Sources */,
+				B49B4637273C18DA00C79134 /* SCDetailViewController.swift in Sources */,
 				B49B45E5273C0F8700C79134 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -429,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -442,6 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93FK67534U;
@@ -460,6 +508,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FZ.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingCart/View/ShoppingCart-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -469,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93FK67534U;
@@ -487,6 +539,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FZ.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingCart/View/ShoppingCart-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -494,6 +548,7 @@
 		B49B4610273C0F8900C79134 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -517,6 +572,7 @@
 		B49B4611273C0F8900C79134 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -540,6 +596,7 @@
 		B49B4613273C0F8900C79134 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93FK67534U;
@@ -561,6 +618,7 @@
 		B49B4614273C0F8900C79134 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93FK67534U;
@@ -619,6 +677,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B49B463B273C408000C79134 /* XCRemoteSwiftPackageReference "FZImageCache" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fauadanwar/FZImageCache";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B49B463C273C408000C79134 /* FZImageCache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B49B463B273C408000C79134 /* XCRemoteSwiftPackageReference "FZImageCache" */;
+			productName = FZImageCache;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B49B45D5273C0F8700C79134 /* Project object */;
 }
