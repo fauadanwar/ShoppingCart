@@ -5,4 +5,7 @@
   Created by Fauad Anwar on 11/11/21.
   
 */
+//"Title Text for Price Label"
 "Price_Title" = "Price";
+//"Title Text for List View NavigationBar"
+"List_View_Title" = "Items";

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SCItemsTableViewCell: UITableViewCell {
+class SCItemTableViewCell: UITableViewCell {
     @IBOutlet weak var imageViewItem: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelPriceTitle: UILabel!

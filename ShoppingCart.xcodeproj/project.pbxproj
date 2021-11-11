@@ -23,9 +23,10 @@
 		B49B464A273CFA0D00C79134 /* SCItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4649273CFA0D00C79134 /* SCItemImage.swift */; };
 		B49B464D273D0EA500C79134 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B49B464F273D0EA500C79134 /* Localizable.strings */; };
 		B49B4658273D137000C79134 /* SCItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4657273D137000C79134 /* SCItemTableViewController.swift */; };
-		B49B465A273D15C900C79134 /* SCItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4659273D15C900C79134 /* SCItemsTableViewCell.swift */; };
 		B49B465C273D25F800C79134 /* SCListItemHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465B273D25F800C79134 /* SCListItemHandler.swift */; };
 		B49B465F273D279C00C79134 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465E273D279C00C79134 /* Constants.swift */; };
+		B49B4663273D511900C79134 /* SCItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4659273D15C900C79134 /* SCItemTableViewCell.swift */; };
+		B49B4666273D598700C79134 /* SCItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B4665273D598700C79134 /* SCItemDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +69,11 @@
 		B49B4650273D0F1500C79134 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		B49B4651273D0F1500C79134 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B49B4657273D137000C79134 /* SCItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemTableViewController.swift; sourceTree = "<group>"; };
-		B49B4659273D15C900C79134 /* SCItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemsTableViewCell.swift; sourceTree = "<group>"; };
+		B49B4659273D15C900C79134 /* SCItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemTableViewCell.swift; sourceTree = "<group>"; };
 		B49B465B273D25F800C79134 /* SCListItemHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCListItemHandler.swift; sourceTree = "<group>"; };
 		B49B465E273D279C00C79134 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B49B4664273D598700C79134 /* SCItemDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemDetailViewController.h; sourceTree = "<group>"; };
+		B49B4665273D598700C79134 /* SCItemDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCItemDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				B49B4657273D137000C79134 /* SCItemTableViewController.swift */,
-				B49B4659273D15C900C79134 /* SCItemsTableViewCell.swift */,
+				B49B4659273D15C900C79134 /* SCItemTableViewCell.swift */,
 			);
 			path = "Item List View";
 			sourceTree = "<group>";
@@ -206,6 +209,8 @@
 		B49B4656273D119C00C79134 /* Detail View */ = {
 			isa = PBXGroup;
 			children = (
+				B49B4664273D598700C79134 /* SCItemDetailViewController.h */,
+				B49B4665273D598700C79134 /* SCItemDetailViewController.m */,
 			);
 			path = "Detail View";
 			sourceTree = "<group>";
@@ -362,7 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49B45E2273C0F8700C79134 /* AppDelegate.m in Sources */,
-				B49B465A273D15C900C79134 /* SCItemsTableViewCell.swift in Sources */,
+				B49B4663273D511900C79134 /* SCItemTableViewCell.swift in Sources */,
+				B49B4666273D598700C79134 /* SCItemDetailViewController.m in Sources */,
 				B49B464A273CFA0D00C79134 /* SCItemImage.swift in Sources */,
 				B49B4648273CF66B00C79134 /* SCItem.swift in Sources */,
 				B49B45F3273C0F8900C79134 /* main.m in Sources */,

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +17,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zGR-5H-YF0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="linkColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -35,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SCItemsTableViewCell" id="yAg-7o-koI" customClass="SCItemsTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SCItemTableViewCell" id="yAg-7o-koI" customClass="SCItemTableViewCell" customModule="ShoppingCart" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="120.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yAg-7o-koI" id="tl3-5A-cNw">
@@ -50,7 +54,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBc-cr-yUi" userLabel="Name">
-                                            <rect key="frame" x="125" y="10" width="254.5" height="20.5"/>
+                                            <rect key="frame" x="125" y="15" width="254.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -76,7 +80,7 @@
                                         <constraint firstItem="MCv-Ya-tGO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xBc-cr-yUi" secondAttribute="bottom" constant="10" id="QeE-yb-fpi"/>
                                         <constraint firstAttribute="bottom" secondItem="GIv-Ax-avu" secondAttribute="bottom" constant="10" id="cWL-rU-fgZ"/>
                                         <constraint firstItem="GIv-Ax-avu" firstAttribute="top" secondItem="tl3-5A-cNw" secondAttribute="top" constant="10" id="ceq-Qk-zz8"/>
-                                        <constraint firstItem="xBc-cr-yUi" firstAttribute="top" secondItem="tl3-5A-cNw" secondAttribute="top" constant="10" id="eVn-ot-ps2"/>
+                                        <constraint firstItem="xBc-cr-yUi" firstAttribute="top" secondItem="tl3-5A-cNw" secondAttribute="top" constant="15" id="eVn-ot-ps2"/>
                                         <constraint firstAttribute="bottom" secondItem="MCv-Ya-tGO" secondAttribute="bottom" constant="10" id="ejN-8k-Elm"/>
                                         <constraint firstItem="Etr-SK-A8e" firstAttribute="leading" secondItem="MCv-Ya-tGO" secondAttribute="trailing" constant="10" id="epD-bG-bA3"/>
                                         <constraint firstItem="Etr-SK-A8e" firstAttribute="top" secondItem="MCv-Ya-tGO" secondAttribute="top" id="iUG-CX-euK"/>
@@ -85,7 +89,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageViewItem" destination="GIv-Ax-avu" id="lYn-kW-3D1"/>
+                                    <outlet property="imageViewItem" destination="GIv-Ax-avu" id="RL0-KA-915"/>
                                     <outlet property="labelName" destination="xBc-cr-yUi" id="thH-4b-dL1"/>
                                     <outlet property="labelPrice" destination="Etr-SK-A8e" id="eFY-mM-Fwx"/>
                                     <outlet property="labelPriceTitle" destination="MCv-Ya-tGO" id="Y8j-xy-hjM"/>
@@ -98,13 +102,35 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZIU-QQ-eUm"/>
+                    <connections>
+                        <segue destination="TCU-Fl-DVY" kind="show" identifier="SCDetailViewSegue" id="kEq-ZF-c2j"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxZ-oO-9mg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046" y="92"/>
         </scene>
+        <!--Item Detail View Controller-->
+        <scene sceneID="THe-oC-gQg">
+            <objects>
+                <viewController id="TCU-Fl-DVY" customClass="SCItemDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W32-vN-J7X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fzc-aY-MbS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gc2-JL-9zC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qIl-Za-lqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="92"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
