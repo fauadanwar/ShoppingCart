@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ShoppingCart-Swift.h"
+@class SCItem;
 
 NS_ASSUME_NONNULL_BEGIN
 

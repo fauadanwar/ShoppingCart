@@ -16,17 +16,17 @@
 		B49B45FD273C0F8900C79134 /* ShoppingCartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45FC273C0F8900C79134 /* ShoppingCartTests.m */; };
 		B49B4607273C0F8900C79134 /* ShoppingCartUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B4606273C0F8900C79134 /* ShoppingCartUITests.m */; };
 		B49B4609273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B4608273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m */; };
-		B49B463D273C408000C79134 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B49B463C273C408000C79134 /* FZImageCache */; };
-		B49B4640273C549F00C79134 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B49B463F273C549F00C79134 /* Alamofire */; };
-		B49B4646273CE7C900C79134 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = B49B4645273CE7C900C79134 /* MBProgressHUD */; };
 		B49B4648273CF66B00C79134 /* SCItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4647273CF66B00C79134 /* SCItem.swift */; };
 		B49B464A273CFA0D00C79134 /* SCItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4649273CFA0D00C79134 /* SCItemImage.swift */; };
 		B49B464D273D0EA500C79134 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B49B464F273D0EA500C79134 /* Localizable.strings */; };
 		B49B4658273D137000C79134 /* SCItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4657273D137000C79134 /* SCItemTableViewController.swift */; };
-		B49B465C273D25F800C79134 /* SCListItemHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465B273D25F800C79134 /* SCListItemHandler.swift */; };
+		B49B465C273D25F800C79134 /* SCListItemRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465B273D25F800C79134 /* SCListItemRequestHandler.swift */; };
 		B49B465F273D279C00C79134 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465E273D279C00C79134 /* Constants.swift */; };
 		B49B4663273D511900C79134 /* SCItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4659273D15C900C79134 /* SCItemTableViewCell.swift */; };
 		B49B4666273D598700C79134 /* SCItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B4665273D598700C79134 /* SCItemDetailViewController.m */; };
+		B4A64470273D688200F3D4F5 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B4A6446F273D688200F3D4F5 /* FZImageCache */; };
+		B4A64473273D688E00F3D4F5 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = B4A64472273D688E00F3D4F5 /* MBProgressHUD */; };
+		B4A64476273D68A800F3D4F5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4A64475273D68A800F3D4F5 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,7 @@
 		B49B4651273D0F1500C79134 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B49B4657273D137000C79134 /* SCItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemTableViewController.swift; sourceTree = "<group>"; };
 		B49B4659273D15C900C79134 /* SCItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemTableViewCell.swift; sourceTree = "<group>"; };
-		B49B465B273D25F800C79134 /* SCListItemHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCListItemHandler.swift; sourceTree = "<group>"; };
+		B49B465B273D25F800C79134 /* SCListItemRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCListItemRequestHandler.swift; sourceTree = "<group>"; };
 		B49B465E273D279C00C79134 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B49B4664273D598700C79134 /* SCItemDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemDetailViewController.h; sourceTree = "<group>"; };
 		B49B4665273D598700C79134 /* SCItemDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCItemDetailViewController.m; sourceTree = "<group>"; };
@@ -81,9 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B49B4646273CE7C900C79134 /* MBProgressHUD in Frameworks */,
-				B49B463D273C408000C79134 /* FZImageCache in Frameworks */,
-				B49B4640273C549F00C79134 /* Alamofire in Frameworks */,
+				B4A64476273D68A800F3D4F5 /* Alamofire in Frameworks */,
+				B4A64473273D688E00F3D4F5 /* MBProgressHUD in Frameworks */,
+				B4A64470273D688200F3D4F5 /* FZImageCache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +185,7 @@
 		B49B4617273C0FDC00C79134 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B49B465B273D25F800C79134 /* SCListItemHandler.swift */,
+				B49B465B273D25F800C79134 /* SCListItemRequestHandler.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -240,9 +240,9 @@
 			);
 			name = ShoppingCart;
 			packageProductDependencies = (
-				B49B463C273C408000C79134 /* FZImageCache */,
-				B49B463F273C549F00C79134 /* Alamofire */,
-				B49B4645273CE7C900C79134 /* MBProgressHUD */,
+				B4A6446F273D688200F3D4F5 /* FZImageCache */,
+				B4A64472273D688E00F3D4F5 /* MBProgressHUD */,
+				B4A64475273D68A800F3D4F5 /* Alamofire */,
 			);
 			productName = ShoppingCart;
 			productReference = B49B45DD273C0F8700C79134 /* ShoppingCart.app */;
@@ -318,9 +318,9 @@
 			);
 			mainGroup = B49B45D4273C0F8700C79134;
 			packageReferences = (
-				B49B463B273C408000C79134 /* XCRemoteSwiftPackageReference "FZImageCache" */,
-				B49B463E273C549F00C79134 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				B49B4644273CE7C900C79134 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				B4A6446E273D688200F3D4F5 /* XCRemoteSwiftPackageReference "FZImageCache" */,
+				B4A64471273D688E00F3D4F5 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				B4A64474273D68A800F3D4F5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = B49B45DE273C0F8700C79134 /* Products */;
 			projectDirPath = "";
@@ -372,7 +372,7 @@
 				B49B464A273CFA0D00C79134 /* SCItemImage.swift in Sources */,
 				B49B4648273CF66B00C79134 /* SCItem.swift in Sources */,
 				B49B45F3273C0F8900C79134 /* main.m in Sources */,
-				B49B465C273D25F800C79134 /* SCListItemHandler.swift in Sources */,
+				B49B465C273D25F800C79134 /* SCListItemRequestHandler.swift in Sources */,
 				B49B4658273D137000C79134 /* SCItemTableViewController.swift in Sources */,
 				B49B45E5273C0F8700C79134 /* SceneDelegate.m in Sources */,
 				B49B465F273D279C00C79134 /* Constants.swift in Sources */,
@@ -750,47 +750,47 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B49B463B273C408000C79134 /* XCRemoteSwiftPackageReference "FZImageCache" */ = {
+		B4A6446E273D688200F3D4F5 /* XCRemoteSwiftPackageReference "FZImageCache" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/fauadanwar/FZImageCache";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
-		B49B463E273C549F00C79134 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		B49B4644273CE7C900C79134 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+		B4A64471273D688E00F3D4F5 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
+			};
+		};
+		B4A64474273D68A800F3D4F5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B49B463C273C408000C79134 /* FZImageCache */ = {
+		B4A6446F273D688200F3D4F5 /* FZImageCache */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B49B463B273C408000C79134 /* XCRemoteSwiftPackageReference "FZImageCache" */;
+			package = B4A6446E273D688200F3D4F5 /* XCRemoteSwiftPackageReference "FZImageCache" */;
 			productName = FZImageCache;
 		};
-		B49B463F273C549F00C79134 /* Alamofire */ = {
+		B4A64472273D688E00F3D4F5 /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B49B463E273C549F00C79134 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		B49B4645273CE7C900C79134 /* MBProgressHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B49B4644273CE7C900C79134 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			package = B4A64471273D688E00F3D4F5 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
 			productName = MBProgressHUD;
+		};
+		B4A64475273D68A800F3D4F5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4A64474273D68A800F3D4F5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import FZImageCache
 
-class SCListItemHandler
+class SCListItemRequestHandler
 {
     func fetchListItems(completion: @escaping ([SCItem]?) -> Void)
     {

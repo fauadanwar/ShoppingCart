@@ -45,7 +45,7 @@ class SCItemTableViewController: UITableViewController {
         
         if listItems.isEmpty
         {
-            let listItemHandler = SCListItemHandler()
+            let listItemHandler = SCListItemRequestHandler()
             MBProgressHUD.showAdded(to: self.view, animated: true)
             listItemHandler.fetchListItems(completion: { items in
                 DispatchQueue.main.async {
