@@ -8,6 +8,7 @@
 #import "SCMasterViewController.h"
 #import <FZImageCache/FZImageCache.h>
 #import "ShoppingCart-Swift.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface SCMasterViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSURL *url = [[NSURL alloc] initWithString:@"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRroxlNTOXyHOlAhJcvPoln60Rk5OEsmml0Dw&usqp=CAU"];
     Item *item = [[Item alloc] initWithImage:ImageCache.publicCache.placeholderImage url:url identifier:@"Kiara"];
     [ImageCache.publicCache loadWithUrl:item.url item:item completion:^(Item * _Nonnull fetchedItem, UIImage * _Nullable fetchedImage) {
@@ -27,6 +29,9 @@
             item.image = fetchedImage;
             blocksafeSelf.imageView.image = item.image;
         }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
     }];
 }
 

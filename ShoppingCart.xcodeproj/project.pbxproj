@@ -19,6 +19,8 @@
 		B49B4609273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B4608273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m */; };
 		B49B4637273C18DA00C79134 /* SCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4636273C18DA00C79134 /* SCDetailViewController.swift */; };
 		B49B463D273C408000C79134 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B49B463C273C408000C79134 /* FZImageCache */; };
+		B49B4640273C549F00C79134 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B49B463F273C549F00C79134 /* Alamofire */; };
+		B49B4646273CE7C900C79134 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = B49B4645273CE7C900C79134 /* MBProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49B4646273CE7C900C79134 /* MBProgressHUD in Frameworks */,
 				B49B463D273C408000C79134 /* FZImageCache in Frameworks */,
+				B49B4640273C549F00C79134 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +197,8 @@
 			name = ShoppingCart;
 			packageProductDependencies = (
 				B49B463C273C408000C79134 /* FZImageCache */,
+				B49B463F273C549F00C79134 /* Alamofire */,
+				B49B4645273CE7C900C79134 /* MBProgressHUD */,
 			);
 			productName = ShoppingCart;
 			productReference = B49B45DD273C0F8700C79134 /* ShoppingCart.app */;
@@ -268,6 +274,8 @@
 			mainGroup = B49B45D4273C0F8700C79134;
 			packageReferences = (
 				B49B463B273C408000C79134 /* XCRemoteSwiftPackageReference "FZImageCache" */,
+				B49B463E273C549F00C79134 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B49B4644273CE7C900C79134 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 			);
 			productRefGroup = B49B45DE273C0F8700C79134 /* Products */;
 			projectDirPath = "";
@@ -687,6 +695,22 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		B49B463E273C549F00C79134 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		B49B4644273CE7C900C79134 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -694,6 +718,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B49B463B273C408000C79134 /* XCRemoteSwiftPackageReference "FZImageCache" */;
 			productName = FZImageCache;
+		};
+		B49B463F273C549F00C79134 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B49B463E273C549F00C79134 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		B49B4645273CE7C900C79134 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B49B4644273CE7C900C79134 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
