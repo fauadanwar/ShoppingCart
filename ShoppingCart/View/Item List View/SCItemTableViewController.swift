@@ -20,6 +20,15 @@ class SCItemTableViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = false
         self.title = NSLocalizedString("List_View_Title", comment: "Title Text for List View NavigationBar")
         
+        setupDataSource()
+        
+        self.dataSource.defaultRowAnimation = .fade
+        
+        generateItems()
+    }
+    
+    func setupDataSource()
+    {
         dataSource = UITableViewDiffableDataSource<Section, SCItem>(tableView: tableView) {
             (tableView: UITableView, indexPath: IndexPath, item: SCItem) -> SCItemTableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "SCItemTableViewCell", for: indexPath) as! SCItemTableViewCell
@@ -40,9 +49,10 @@ class SCItemTableViewController: UITableViewController {
             }
             return cell
         }
-        
-        self.dataSource.defaultRowAnimation = .fade
-        
+    }
+    
+    func generateItems()
+    {
         if listItems.isEmpty
         {
             let listItemHandler = SCListItemRequestHandler()
