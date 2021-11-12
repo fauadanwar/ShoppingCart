@@ -10,10 +10,12 @@ import XCTest
 
 class ListItemRequestHandlerTests: XCTestCase {
 
-    var resultDictionary = [[String:Any]]()
+    var resultDictionary : [[String:Any]]!
+    var listItemRequestHandler : SCListItemRequestHandler!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        listItemRequestHandler = SCListItemRequestHandler()
         resultDictionary = [
             [
                "created_at":"2019-02-24 04:04:17.566515",
@@ -50,12 +52,23 @@ class ListItemRequestHandlerTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        resultDictionary = nil
+        listItemRequestHandler = nil
     }
 
     func testResponseParsingForItems() throws {
-        let listItemRequestHandler = SCListItemRequestHandler()
         let items = listItemRequestHandler.parseResponse(results: resultDictionary)
         XCTAssertEqual(items.count, 2, "Item parsing is wrong")
+    }
+    
+    func testFetchListItems() throws {
+        let promise = expectation(description: "Items are present")
+        listItemRequestHandler.fetchListItems(completion: { items, errorMessage in
+            XCTAssertNotNil(items, "Items are nil")
+            XCTAssertNil(errorMessage, "errorMessage is present \(errorMessage ?? "empty error")")
+            promise.fulfill()
+        })
+        wait(for: [promise], timeout: 10)
     }
 
     func testPerformanceExample() throws {

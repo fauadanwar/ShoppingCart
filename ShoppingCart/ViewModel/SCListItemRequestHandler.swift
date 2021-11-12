@@ -26,7 +26,7 @@ class SCListItemRequestHandler
         return items
     }
     
-    func fetchListItems(completion: @escaping ([SCItem]?) -> Void)
+    func fetchListItems(completion: @escaping ([SCItem]?, String?) -> Void)
     {
         AF.request(SCURLs.listItemURL.rawValue).responseJSON { [self] response in
             switch response.result {
@@ -35,20 +35,20 @@ class SCListItemRequestHandler
                 guard let responseDictionary = JSON as? [String:Any],
                       let results = responseDictionary[responseKeys.results.rawValue] as? [[String:Any]] else
                 {
-                    completion(nil)
+                    completion(nil, "Failure with parsing")
                     return
                 }
                 let items = parseResponse(results: results)
                 if items.count > 0
                 {
-                    completion(items)
+                    completion(items, nil)
                 } else {
-                    completion(nil)
+                    completion(nil, "Empty Response")
                 }
                
             case .failure(let error):
                 print("Failure with error: \(error)")
-                completion(nil)
+                completion(nil, error.errorDescription)
             }
         }
     }

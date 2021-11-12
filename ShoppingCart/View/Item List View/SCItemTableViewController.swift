@@ -47,7 +47,7 @@ class SCItemTableViewController: UITableViewController {
         {
             let listItemHandler = SCListItemRequestHandler()
             MBProgressHUD.showAdded(to: self.view, animated: true)
-            listItemHandler.fetchListItems(completion: { items in
+            listItemHandler.fetchListItems(completion: { items, errorString in
                 DispatchQueue.main.async {
                     MBProgressHUD.hide(for: self.view, animated: true)
                 }
@@ -58,6 +58,10 @@ class SCItemTableViewController: UITableViewController {
                     initialSnapshot.appendSections([.main])
                     initialSnapshot.appendItems(self.listItems)
                     self.dataSource.apply(initialSnapshot, animatingDifferences: true)
+                }
+                else if let message = errorString
+                {
+                    print(message)
                 }
             })
         }
