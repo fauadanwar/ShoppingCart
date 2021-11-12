@@ -40,14 +40,20 @@
 {
     imageObjects = [[NSMutableArray alloc] init];
     NSMutableArray *imageSources = [[NSMutableArray alloc] init];
-    for (SCItemImage * itemImages in item.images)
-    {
-        // Some issue with data source as other image URL are working fine, but image in API resone are not getting fetched
-        NSURL *url = [[NSURL alloc] initWithString:@"https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080"];//itemImages.image_url];
-        AlamofireSource *imagesource = [[AlamofireSource alloc] initWithUrl:url placeholder:ImageCache.publicCache.placeholderImage];
-        [imageSources addObject:imagesource];
-    }
+    // Some issue with data source as other image URL are working fine, but image in API are not getting fetched
+//    for (SCItemImage * itemImages in item.images)
+//    {
+    NSURL *url = [[NSURL alloc] initWithString:item.images.firstObject.image_url];
+    AlamofireSource *imagesource = [[AlamofireSource alloc] initWithUrl:url placeholder:ImageCache.publicCache.placeholderImage];
+    [imageSources addObject:imagesource];
+    AlamofireSource *imagesource1 = [[AlamofireSource alloc] initWithUrl:[NSURL URLWithString:@"https://images.unsplash.com/photo-1432679963831-2dab49187847?w=1080"] placeholder:ImageCache.publicCache.placeholderImage];
+    [imageSources addObject:imagesource1];
+    AlamofireSource *imagesource2 = [[AlamofireSource alloc] initWithUrl:[NSURL URLWithString:@"https://cdn.mos.cms.futurecdn.net/wtqqnkYDYi2ifsWZVW2MT4-1024-80.jpg.webp"] placeholder:ImageCache.publicCache.placeholderImage];
+    [imageSources addObject:imagesource2];
+//    }
     [self.viewItemSlideShow setImageInputs:imageSources];
+    self.viewItemSlideShow.pageControl.currentPageIndicatorTintColor = UIColor.lightGrayColor;
+    self.viewItemSlideShow.pageControl.pageIndicatorTintColor = UIColor.blackColor;
 }
 /*
 #pragma mark - Navigation
