@@ -119,21 +119,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g0N-7s-MLs">
-                                <rect key="frame" x="82" y="98" width="250" height="250"/>
+                                <rect key="frame" x="15" y="98" width="384" height="384"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Akb-IS-JAn"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="H2U-KJ-08b"/>
                                     <constraint firstAttribute="width" secondItem="g0N-7s-MLs" secondAttribute="height" multiplier="1:1" id="ou7-F0-oLR"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Price Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dk-f0-CoM" userLabel="Price Title">
-                                <rect key="frame" x="82" y="358" width="76" height="20.5"/>
+                                <rect key="frame" x="15" y="492" width="76" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0C-uM-VZP" userLabel="Price">
-                                <rect key="frame" x="168" y="358" width="164" height="20.5"/>
+                                <rect key="frame" x="101" y="492" width="298" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" fixedFrame="YES" text="Price Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfa-Qe-6P3" userLabel="Created At">
+                                <rect key="frame" x="15" y="520" width="76" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8C-Z1-DUq" userLabel="Created at value">
+                                <rect key="frame" x="101" y="520" width="298" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -147,9 +159,9 @@
                             <constraint firstItem="P0C-uM-VZP" firstAttribute="bottom" secondItem="6Dk-f0-CoM" secondAttribute="bottom" id="Xub-VU-SAj"/>
                             <constraint firstItem="fzc-aY-MbS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6Dk-f0-CoM" secondAttribute="bottom" constant="15" id="Ywi-Qq-Jc2"/>
                             <constraint firstItem="g0N-7s-MLs" firstAttribute="centerX" secondItem="W32-vN-J7X" secondAttribute="centerX" id="Zvf-ej-J0u"/>
-                            <constraint firstItem="fzc-aY-MbS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g0N-7s-MLs" secondAttribute="trailing" constant="15" id="cOg-5G-qHL"/>
+                            <constraint firstItem="fzc-aY-MbS" firstAttribute="trailing" secondItem="g0N-7s-MLs" secondAttribute="trailing" constant="15" id="cOg-5G-qHL"/>
                             <constraint firstItem="6Dk-f0-CoM" firstAttribute="leading" secondItem="g0N-7s-MLs" secondAttribute="leading" id="pMw-gZ-iCE"/>
-                            <constraint firstItem="g0N-7s-MLs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fzc-aY-MbS" secondAttribute="leading" constant="15" id="qgb-sl-rI2"/>
+                            <constraint firstItem="g0N-7s-MLs" firstAttribute="leading" secondItem="fzc-aY-MbS" secondAttribute="leading" constant="15" id="qgb-sl-rI2"/>
                             <constraint firstItem="6Dk-f0-CoM" firstAttribute="top" secondItem="g0N-7s-MLs" secondAttribute="bottom" constant="10" id="rcc-sj-1jV"/>
                             <constraint firstItem="P0C-uM-VZP" firstAttribute="leading" secondItem="6Dk-f0-CoM" secondAttribute="trailing" constant="10" id="xFU-oG-LwE"/>
                             <constraint firstItem="P0C-uM-VZP" firstAttribute="top" secondItem="6Dk-f0-CoM" secondAttribute="top" id="ypk-Xn-c6K"/>
@@ -158,6 +170,8 @@
                     <navigationItem key="navigationItem" id="Gc2-JL-9zC"/>
                     <connections>
                         <outlet property="imageViewItem" destination="g0N-7s-MLs" id="FyK-ZG-q2u"/>
+                        <outlet property="labelCreatedAtTitle" destination="Pfa-Qe-6P3" id="YXb-Tn-rBk"/>
+                        <outlet property="labelCreatedAtValue" destination="v8C-Z1-DUq" id="MFA-89-Pwf"/>
                         <outlet property="labelPrice" destination="P0C-uM-VZP" id="B0A-E8-upu"/>
                         <outlet property="labelPriceTitle" destination="6Dk-f0-CoM" id="thf-PB-vLE"/>
                     </connections>
