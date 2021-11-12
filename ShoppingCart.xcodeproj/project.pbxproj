@@ -30,7 +30,6 @@
 		B4A64476273D68A800F3D4F5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4A64475273D68A800F3D4F5 /* Alamofire */; };
 		B4A64479273D832300F3D4F5 /* ListItemRequestHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A64478273D832300F3D4F5 /* ListItemRequestHandlerTests.swift */; };
 		B4A6447C273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6447B273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift */; };
-		B4A6447D273D8B9300F3D4F5 /* SCListItemRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465B273D25F800C79134 /* SCListItemRequestHandler.swift */; };
 		B4A6447F273E3CBE00F3D4F5 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B4A6447E273E3CBE00F3D4F5 /* FZImageCache */; };
 		DBE998368EA53015EEE1ABFB /* Pods_ShoppingCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C736E96AD4DD2EA5EFFB89 /* Pods_ShoppingCart.framework */; };
 /* End PBXBuildFile section */
@@ -538,7 +537,6 @@
 			files = (
 				B49B45FD273C0F8900C79134 /* ShoppingCartTests.m in Sources */,
 				B4A64479273D832300F3D4F5 /* ListItemRequestHandlerTests.swift in Sources */,
-				B4A6447D273D8B9300F3D4F5 /* SCListItemRequestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

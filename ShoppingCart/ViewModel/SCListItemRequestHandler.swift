@@ -11,16 +11,16 @@ import FZImageCache
 
 class SCListItemRequestHandler
 {
-    func parseResponse(results: [NSDictionary]) -> [SCItem]
+    func parseResponse(results: [[String:Any]]) -> [SCItem]
     {
         var items = [SCItem]()
-        for result in results as [NSDictionary]
+        for result in results as [[String:Any]]
         {
-            if let thumbnailSrtingArray = result.object(forKey: responseKeys.image_urls_thumbnails.rawValue) as? [String], let url = URL(string: thumbnailSrtingArray.first!), let thumbnailIdArray = result.object(forKey: responseKeys.image_ids.rawValue) as? [String], let image_id = thumbnailIdArray.first
+            if let thumbnailSrtingArray = result[responseKeys.image_urls_thumbnails.rawValue] as? [String], let url = URL(string: thumbnailSrtingArray.first!), let thumbnailIdArray = result[responseKeys.image_ids.rawValue] as? [String], let image_id = thumbnailIdArray.first
             {
                 let imageItem = Item(image: ImageCache.publicCache.placeholderImage, url: url, identifier: image_id)
                 
-                items.append(SCItem(created_at: result.object(forKey: responseKeys.createdAt.rawValue) as! String, price: result.object(forKey: responseKeys.price.rawValue) as! String, name: result.object(forKey: responseKeys.name.rawValue) as! String, uid: result.object(forKey: responseKeys.uid.rawValue) as! String, image_ids: result.object(forKey: responseKeys.image_ids.rawValue) as! [String], image_urls: result.object(forKey: responseKeys.image_urls.rawValue) as! [String], image_urls_thumbnails: result.object(forKey: responseKeys.image_urls_thumbnails.rawValue) as! [String], imageItem: imageItem))
+                items.append(SCItem(created_at: result[responseKeys.createdAt.rawValue] as! String, price: result[ responseKeys.price.rawValue] as! String, name: result[responseKeys.name.rawValue] as! String, uid: result[responseKeys.uid.rawValue] as! String, image_ids: result[responseKeys.image_ids.rawValue] as! [String], image_urls: result[responseKeys.image_urls.rawValue] as! [String], image_urls_thumbnails: result[ responseKeys.image_urls_thumbnails.rawValue] as! [String], imageItem: imageItem))
             }
         }
         return items
@@ -32,8 +32,8 @@ class SCListItemRequestHandler
             switch response.result {
             case .success(let JSON):
                 print("Success with JSON: \(JSON)")
-                guard let responseDictionary = JSON as? NSDictionary,
-                      let results = responseDictionary.object(forKey: responseKeys.results.rawValue) as? [NSDictionary] else
+                guard let responseDictionary = JSON as? [String:Any],
+                      let results = responseDictionary[responseKeys.results.rawValue] as? [[String:Any]] else
                 {
                     completion(nil)
                     return
