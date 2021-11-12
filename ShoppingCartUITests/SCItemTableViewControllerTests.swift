@@ -9,25 +9,85 @@ import XCTest
 
 class SCItemTableViewControllerTests: XCTestCase {
 
+    var app: XCUIApplication!
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        try super.setUpWithError()
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launch()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testProgressIndicator() throws {
+        let progressIndicator = app.tables["In progress"].activityIndicators["In progress"]
+        XCTAssertTrue(progressIndicator.exists)
+        waitFor(object: progressIndicator) { !$0.exists }
     }
+    
+    func testTabelCellAndNavigation() throws
+    {
+        try testProgressIndicator()
+        let navbarTitle = app.navigationBars["Items"].staticTexts["Items"]
+        XCTAssertTrue(navbarTitle.exists)
+        let tableView = app.tables.containing(.table, identifier: "ItemTableViewController")
+        XCTAssertTrue(tableView.cells.count > 0)
+        let firstCell = tableView.cells.element(boundBy: 0)
+        firstCell.tap()
+        
+        waitFor(object: navbarTitle) { !$0.exists }
 
-    func testExample() throws {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let notebookNavigationBar = app.navigationBars["Notebook"]
+        waitFor(object: notebookNavigationBar) { $0.exists }
     }
+    
+    func testDetailScreen() throws
+    {
+        try testTabelCellAndNavigation()
+        
+        let priceLabel = app.staticTexts["Price"]
+        XCTAssertTrue(priceLabel.exists)
 
+        let createdAtLabel = app.staticTexts["Created at"]
+        XCTAssertTrue(createdAtLabel.exists)
+
+        let datelabel = app.staticTexts["2019-02-24 04:04:17.566515"]
+        XCTAssertTrue(datelabel.exists)
+
+        let priceValueLabel = app.staticTexts["AED 5"]
+        XCTAssertTrue(priceValueLabel.exists)
+
+        let elementsQuery = app.scrollViews.otherElements
+        let image = elementsQuery.images["photo.fill.on.rectangle.fill"]
+        XCTAssertTrue(image.exists)
+        
+        let notebookNavigationBar = app.navigationBars["Notebook"]
+        XCTAssertTrue(notebookNavigationBar.exists)
+
+        elementsQuery.children(matching: .image).element.tap()
+        notebookNavigationBar.buttons["Items"].tap()
+        waitFor(object: notebookNavigationBar) { !$0.exists }
+        
+        let itemNavigationBar = app.navigationBars["Items"].staticTexts["Items"]
+        waitFor(object: itemNavigationBar) { $0.exists }
+        XCTAssertTrue(itemNavigationBar.exists)
+    }
+}
+
+extension XCTestCase {
+
+    // Based on https://stackoverflow.com/a/33855219
+    func waitFor<T>(object: T, timeout: TimeInterval = 15, file: String = #file, line: Int = #line, expectationPredicate: @escaping (T) -> Bool) {
+        let predicate = NSPredicate { obj, _ in
+            expectationPredicate(obj as! T)
+        }
+        expectation(for: predicate, evaluatedWith: object, handler: nil)
+
+        waitForExpectations(timeout: timeout) { error in
+            if (error != nil) {
+                let message = "Failed to fulful expectation block for \(object) after \(timeout) seconds."
+                let location = XCTSourceCodeLocation(filePath: file, lineNumber: line)
+                let issue = XCTIssue(type: .assertionFailure, compactDescription: message, detailedDescription: nil, sourceCodeContext: .init(location: location), associatedError: nil, attachments: [])
+                self.record(issue)
+            }
+        }
+    }
 }

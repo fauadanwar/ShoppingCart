@@ -19,6 +19,7 @@ class SCItemTableViewController: UITableViewController {
         
         self.clearsSelectionOnViewWillAppear = false
         self.title = NSLocalizedString("List_View_Title", comment: "Title Text for List View NavigationBar")
+        self.tableView.accessibilityIdentifier = "ItemTableViewController"
         
         setupDataSource()
         
