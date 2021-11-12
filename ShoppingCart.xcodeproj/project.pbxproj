@@ -27,6 +27,9 @@
 		B4A64470273D688200F3D4F5 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B4A6446F273D688200F3D4F5 /* FZImageCache */; };
 		B4A64473273D688E00F3D4F5 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = B4A64472273D688E00F3D4F5 /* MBProgressHUD */; };
 		B4A64476273D68A800F3D4F5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4A64475273D68A800F3D4F5 /* Alamofire */; };
+		B4A64479273D832300F3D4F5 /* ListItemRequestHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A64478273D832300F3D4F5 /* ListItemRequestHandlerTests.swift */; };
+		B4A6447C273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6447B273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift */; };
+		B4A6447D273D8B9300F3D4F5 /* SCListItemRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465B273D25F800C79134 /* SCListItemRequestHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,10 @@
 		B49B465E273D279C00C79134 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B49B4664273D598700C79134 /* SCItemDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemDetailViewController.h; sourceTree = "<group>"; };
 		B49B4665273D598700C79134 /* SCItemDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCItemDetailViewController.m; sourceTree = "<group>"; };
+		B4A64477273D832200F3D4F5 /* ShoppingCartTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingCartTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		B4A64478273D832300F3D4F5 /* ListItemRequestHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRequestHandlerTests.swift; sourceTree = "<group>"; };
+		B4A6447A273D84D400F3D4F5 /* ShoppingCartUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingCartUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		B4A6447B273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemTableViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				B49B45FC273C0F8900C79134 /* ShoppingCartTests.m */,
+				B4A64478273D832300F3D4F5 /* ListItemRequestHandlerTests.swift */,
+				B4A64477273D832200F3D4F5 /* ShoppingCartTests-Bridging-Header.h */,
 			);
 			path = ShoppingCartTests;
 			sourceTree = "<group>";
@@ -158,6 +167,8 @@
 			children = (
 				B49B4606273C0F8900C79134 /* ShoppingCartUITests.m */,
 				B49B4608273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m */,
+				B4A6447B273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift */,
+				B4A6447A273D84D400F3D4F5 /* ShoppingCartUITests-Bridging-Header.h */,
 			);
 			path = ShoppingCartUITests;
 			sourceTree = "<group>";
@@ -299,10 +310,12 @@
 					};
 					B49B45F7273C0F8900C79134 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 						TestTargetID = B49B45DC273C0F8700C79134;
 					};
 					B49B4601273C0F8900C79134 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 						TestTargetID = B49B45DC273C0F8700C79134;
 					};
 				};
@@ -384,6 +397,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49B45FD273C0F8900C79134 /* ShoppingCartTests.m in Sources */,
+				B4A64479273D832300F3D4F5 /* ListItemRequestHandlerTests.swift in Sources */,
+				B4A6447D273D8B9300F3D4F5 /* SCListItemRequestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49B4609273C0F8900C79134 /* ShoppingCartUITestsLaunchTests.m in Sources */,
+				B4A6447C273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift in Sources */,
 				B49B4607273C0F8900C79134 /* ShoppingCartUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,11 +637,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93FK67534U;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -635,6 +652,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FZ.ShoppingCartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingCartTests/ShoppingCartTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingCart.app/ShoppingCart";
 			};
@@ -645,11 +665,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93FK67534U;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,6 +680,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FZ.ShoppingCartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingCartTests/ShoppingCartTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShoppingCart.app/ShoppingCart";
 			};
@@ -668,6 +691,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93FK67534U;
@@ -681,6 +705,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FZ.ShoppingCartUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingCartUITests/ShoppingCartUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ShoppingCart;
 			};
@@ -690,6 +717,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93FK67534U;
@@ -703,6 +731,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FZ.ShoppingCartUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingCartUITests/ShoppingCartUITests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ShoppingCart;
 			};
