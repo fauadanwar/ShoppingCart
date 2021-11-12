@@ -7,7 +7,8 @@ target 'ShoppingCart' do
 
   # Pods for ShoppingCart
   pod 'ImageSlideshow'
-
+  pod 'ImageSlideshow/Alamofire'
+  
   target 'ShoppingCartTests' do
     inherit! :search_paths
     # Pods for testing
