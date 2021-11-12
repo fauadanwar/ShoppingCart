@@ -40,9 +40,40 @@
 {
     imageObjects = [[NSMutableArray alloc] init];
     NSMutableArray *imageSources = [[NSMutableArray alloc] init];
-    // Some issue with data source as other image URL are working fine, but image in API are not getting fetched
-//    for (SCItemImage * itemImages in item.images)
-//    {
+    
+    // Code if we are showing single Image
+    //        Item *imagesItem = [[Item alloc] initWithImage:ImageCache.publicCache.placeholderImage url:url identifier: item.images.firstObject.image_id];
+    //        self.imageViewItem.image = imagesItem.image;
+    //        [MBProgressHUD showHUDAddedTo:self.imageViewItem animated:YES];
+    //        [ImageCache.publicCache loadWithUrl: imagesItem.url item: imagesItem completion:^(Item * _Nonnull fetchedItem, UIImage * _Nullable image)
+    //         {
+    //            [MBProgressHUD hideHUDForView:self.imageViewItem animated:YES];
+    //            if (image != fetchedItem.image)
+    //            {
+    //                imagesItem.image = image;
+    //                self.imageViewItem.image = image;
+    //            }
+    //        }];
+   
+    // Commeting below code as viewItemSlideShow does not have update image facility.
+    //        for (SCItemImage * itemImages in item.images)
+    //        {
+    //            NSURL *url = [[NSURL alloc] initWithString:itemImages.image_url];
+    //            Item *imagesItem = [[Item alloc] initWithImage:ImageCache.publicCache.placeholderImage url:url identifier: item.images.firstObject.image_id];
+    //            ImageSource *imagesource = [[ImageSource alloc] initWithImage:imagesItem.image];
+    //            [imageSources addObject:imagesource];
+    //            [MBProgressHUD showHUDAddedTo:self.viewItemSlideShow animated:YES];
+    //            [ImageCache.publicCache loadWithUrl: imagesItem.url item: imagesItem completion:^(Item * _Nonnull fetchedItem, UIImage * _Nullable image)
+    //             {
+    //                [MBProgressHUD hideHUDForView:self.viewItemSlideShow animated:YES];
+    //                if (image != fetchedItem.image)
+    //                {
+    //                    imagesItem.image = image;
+    //                }
+    //            }];
+    //        }
+    
+    // Added this code because Some issue with AlamofireSource/API url as other image URL are working fine, but image in API are not getting fetched
     NSURL *url = [[NSURL alloc] initWithString:item.images.firstObject.image_url];
     AlamofireSource *imagesource = [[AlamofireSource alloc] initWithUrl:url placeholder:ImageCache.publicCache.placeholderImage];
     [imageSources addObject:imagesource];
@@ -50,7 +81,7 @@
     [imageSources addObject:imagesource1];
     AlamofireSource *imagesource2 = [[AlamofireSource alloc] initWithUrl:[NSURL URLWithString:@"https://cdn.mos.cms.futurecdn.net/wtqqnkYDYi2ifsWZVW2MT4-1024-80.jpg.webp"] placeholder:ImageCache.publicCache.placeholderImage];
     [imageSources addObject:imagesource2];
-//    }
+
     [self.viewItemSlideShow setImageInputs:imageSources];
     self.viewItemSlideShow.pageControl.currentPageIndicatorTintColor = UIColor.lightGrayColor;
     self.viewItemSlideShow.pageControl.pageIndicatorTintColor = UIColor.blackColor;
