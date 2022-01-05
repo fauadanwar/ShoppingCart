@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": "master",
-          "revision": "e0edbf64d4a69327ffb8e0f7cfe4e5a4fe36d124",
+          "revision": "f82c23a8a7ef8dc1a49a8bfc6a96883e79121864",
           "version": null
         }
       },
@@ -14,8 +14,8 @@
         "package": "FZImageCache",
         "repositoryURL": "https://github.com/fauadanwar/FZImageCache",
         "state": {
-          "branch": "main",
-          "revision": "b701e78646fc5f238985004587d027f1cf9e6ef4",
+          "branch": "master",
+          "revision": "39cfaf89b2ed9b901007ac34459e8ee542e249e4",
           "version": null
         }
       },

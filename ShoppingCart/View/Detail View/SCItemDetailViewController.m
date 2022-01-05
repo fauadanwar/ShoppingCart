@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
 @property (weak, nonatomic) IBOutlet UILabel *labelCreatedAtTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelCreatedAtValue;
-@property (nonatomic, strong) NSMutableArray<Item *> *imageObjects;
+@property (nonatomic, strong) NSMutableArray<SCItem *> *imageObjects;
 @end
 
 @implementation SCItemDetailViewController

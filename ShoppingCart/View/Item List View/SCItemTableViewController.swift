@@ -11,7 +11,16 @@ import MBProgressHUD
 
 class SCItemTableViewController: UITableViewController {
     
-    var dataSource: UITableViewDiffableDataSource<Section, SCItem>! = nil
+    enum Section {
+      case main
+    }
+    typealias DataSource = UITableViewDiffableDataSource<Section, SCItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, SCItem>
+
+    private lazy var dataSource = setupDataSource()
+
+    private var searchController = UISearchController(searchResultsController: nil)
+    
     private var listItems = [SCItem]()
     
     override func viewDidLoad() {
@@ -20,36 +29,26 @@ class SCItemTableViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = false
         self.title = NSLocalizedString("List_View_Title", comment: "Title Text for List View NavigationBar")
         self.tableView.accessibilityIdentifier = "ItemTableViewController"
-        
-        setupDataSource()
-        
-        self.dataSource.defaultRowAnimation = .fade
-        
         generateItems()
     }
-    
-    func setupDataSource()
+     
+    func setupDataSource() -> DataSource
     {
-        dataSource = UITableViewDiffableDataSource<Section, SCItem>(tableView: tableView) {
-            (tableView: UITableView, indexPath: IndexPath, item: SCItem) -> SCItemTableViewCell? in
+        let dataSource = DataSource(tableView: tableView) { tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "SCItemTableViewCell", for: indexPath) as! SCItemTableViewCell
-            cell.labelName.text = item.name
-            cell.labelPrice.text = item.price
-            /// - Tag: update
-            cell.imageViewItem.image = item.imageItem.image
-            ImageCache.publicCache.load(url: item.imageItem.url as NSURL, item: item.imageItem) { (fetchedItem, image) in
-                if let img = image, img != fetchedItem.image {
-                    var updatedSnapshot = self.dataSource.snapshot()
-                    if let datasourceIndex = updatedSnapshot.indexOfItem(item) {
-                        let item = self.listItems[datasourceIndex]
-                        item.imageItem.image = img
-                        updatedSnapshot.reloadItems([item])
-                        self.dataSource.apply(updatedSnapshot, animatingDifferences: true)
-                    }
-                }
-            }
+            cell.configureCell(item: item)
             return cell
         }
+        dataSource.defaultRowAnimation = .fade
+        return dataSource
+    }
+    
+    func applySnapshot(animatingDifferences: Bool = true)
+    {
+        var initialSnapshot = Snapshot()
+        initialSnapshot.appendSections([.main])
+        initialSnapshot.appendItems(self.listItems)
+        self.dataSource.apply(initialSnapshot, animatingDifferences: animatingDifferences)
     }
     
     func generateItems()
@@ -58,17 +57,14 @@ class SCItemTableViewController: UITableViewController {
         {
             let listItemHandler = SCListItemRequestHandler()
             MBProgressHUD.showAdded(to: self.view, animated: true)
-            listItemHandler.fetchListItems(completion: { items, errorString in
+            listItemHandler.fetchListItems(completion: { [unowned self] items, errorString in
                 DispatchQueue.main.async {
                     MBProgressHUD.hide(for: self.view, animated: true)
                 }
                 if let listItems = items
                 {
                     self.listItems = listItems
-                    var initialSnapshot = NSDiffableDataSourceSnapshot<Section, SCItem>()
-                    initialSnapshot.appendSections([.main])
-                    initialSnapshot.appendItems(self.listItems)
-                    self.dataSource.apply(initialSnapshot, animatingDifferences: true)
+                    self.applySnapshot()
                 }
                 else if let message = errorString
                 {
@@ -90,8 +86,10 @@ class SCItemTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if (segue.identifier == "SCDetailViewSegue") {
             let controller = segue.destination as! SCItemDetailViewController
-            let row = (sender as! NSIndexPath).row; //we know that sender is an NSIndexPath here.
-            let item = listItems[row]
+            let indexPath = (sender as! IndexPath); //we know that sender is an NSIndexPath here.
+            guard let item = dataSource.itemIdentifier(for: indexPath) else {
+              return
+            }
             controller.item = item
         }
     }

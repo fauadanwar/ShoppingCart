@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2490402DCB0279E2F4F734B1 /* Pods_ShoppingCart_ShoppingCartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD52F84355503D4AB3D939CD /* Pods_ShoppingCart_ShoppingCartUITests.framework */; };
 		AD428DE596428DBCCBCEDC88 /* Pods_ShoppingCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2606E129566761290A7326 /* Pods_ShoppingCartTests.framework */; };
+		B439A1D8278329E000990BA0 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B439A1D7278329E000990BA0 /* FZImageCache */; };
 		B49B45E2273C0F8700C79134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E1273C0F8700C79134 /* AppDelegate.m */; };
 		B49B45E5273C0F8700C79134 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E4273C0F8700C79134 /* SceneDelegate.m */; };
 		B49B45EB273C0F8700C79134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49B45E9273C0F8700C79134 /* Main.storyboard */; };
@@ -30,7 +31,6 @@
 		B4A64476273D68A800F3D4F5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4A64475273D68A800F3D4F5 /* Alamofire */; };
 		B4A64479273D832300F3D4F5 /* ListItemRequestHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A64478273D832300F3D4F5 /* ListItemRequestHandlerTests.swift */; };
 		B4A6447C273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6447B273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift */; };
-		B4A6447F273E3CBE00F3D4F5 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B4A6447E273E3CBE00F3D4F5 /* FZImageCache */; };
 		DBE998368EA53015EEE1ABFB /* Pods_ShoppingCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C736E96AD4DD2EA5EFFB89 /* Pods_ShoppingCart.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +102,7 @@
 				B4A64476273D68A800F3D4F5 /* Alamofire in Frameworks */,
 				B4A64473273D688E00F3D4F5 /* MBProgressHUD in Frameworks */,
 				DBE998368EA53015EEE1ABFB /* Pods_ShoppingCart.framework in Frameworks */,
-				B4A6447F273E3CBE00F3D4F5 /* FZImageCache in Frameworks */,
+				B439A1D8278329E000990BA0 /* FZImageCache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +286,7 @@
 			packageProductDependencies = (
 				B4A64472273D688E00F3D4F5 /* MBProgressHUD */,
 				B4A64475273D68A800F3D4F5 /* Alamofire */,
-				B4A6447E273E3CBE00F3D4F5 /* FZImageCache */,
+				B439A1D7278329E000990BA0 /* FZImageCache */,
 			);
 			productName = ShoppingCart;
 			productReference = B49B45DD273C0F8700C79134 /* ShoppingCart.app */;
@@ -338,7 +338,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					B49B45DC273C0F8700C79134 = {
 						CreatedOnToolsVersion = 13.1;
@@ -367,9 +367,9 @@
 			);
 			mainGroup = B49B45D4273C0F8700C79134;
 			packageReferences = (
-				B4A6446E273D688200F3D4F5 /* XCRemoteSwiftPackageReference "FZImageCache" */,
 				B4A64471273D688E00F3D4F5 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 				B4A64474273D68A800F3D4F5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B439A1D6278329E000990BA0 /* XCRemoteSwiftPackageReference "FZImageCache" */,
 			);
 			productRefGroup = B49B45DE273C0F8700C79134 /* Products */;
 			projectDirPath = "";
@@ -705,6 +705,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -926,11 +927,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B4A6446E273D688200F3D4F5 /* XCRemoteSwiftPackageReference "FZImageCache" */ = {
+		B439A1D6278329E000990BA0 /* XCRemoteSwiftPackageReference "FZImageCache" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/fauadanwar/FZImageCache";
 			requirement = {
-				branch = main;
+				branch = master;
 				kind = branch;
 			};
 		};
@@ -953,6 +954,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B439A1D7278329E000990BA0 /* FZImageCache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B439A1D6278329E000990BA0 /* XCRemoteSwiftPackageReference "FZImageCache" */;
+			productName = FZImageCache;
+		};
 		B4A64472273D688E00F3D4F5 /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4A64471273D688E00F3D4F5 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
@@ -962,11 +968,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B4A64474273D68A800F3D4F5 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		B4A6447E273E3CBE00F3D4F5 /* FZImageCache */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B4A6446E273D688200F3D4F5 /* XCRemoteSwiftPackageReference "FZImageCache" */;
-			productName = FZImageCache;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

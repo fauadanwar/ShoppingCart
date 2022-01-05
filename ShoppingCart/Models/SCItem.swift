@@ -19,7 +19,7 @@ enum Section {
     @objc var name: String!
     @objc var uid: String!
     @objc var images =  [SCItemImage]()
-    @objc var imageItem: Item!
+    
     override var hash : Int {
         var hasher = Hasher()
         hasher.combine(uid)
@@ -37,18 +37,16 @@ enum Section {
         return lhs.uid == rhs.uid
     }
     
-    @objc init(created_at: String, price: String, name: String, uid: String, image_ids: [String], image_urls: [String], image_urls_thumbnails: [String], imageItem: Item)
+    @objc init(created_at: String, price: String, name: String, uid: String, image_ids: [String], image_urls: [String], image_urls_thumbnails: [String])
     {
         self.created_at = created_at
         self.price = price
         self.name = name
         self.uid = uid
-        self.imageItem = imageItem
         for index in 0...image_ids.count - 1
         {
             images.append(SCItemImage(image_id: image_ids[index], image_url: image_urls[index], image_urls_thumbnail: image_urls_thumbnails[index]))
         }
-        
     }
 
 }

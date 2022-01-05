@@ -6,7 +6,7 @@
   
 */
 //"Title Text for Price Label"
-"Price_Title" = "Price";
+"Price_Title" = "Price:";
 //"Title Text for List View NavigationBar"
 "List_View_Title" = "Items";
 //"Title Text for Created at"

@@ -16,12 +16,7 @@ class SCListItemRequestHandler
         var items = [SCItem]()
         for result in results as [[String:Any]]
         {
-            if let thumbnailSrtingArray = result[responseKeys.image_urls_thumbnails.rawValue] as? [String], let url = URL(string: thumbnailSrtingArray.first!), let thumbnailIdArray = result[responseKeys.image_ids.rawValue] as? [String], let image_id = thumbnailIdArray.first
-            {
-                let imageItem = Item(image: ImageCache.publicCache.placeholderImage, url: url, identifier: image_id)
-                
-                items.append(SCItem(created_at: result[responseKeys.createdAt.rawValue] as! String, price: result[ responseKeys.price.rawValue] as! String, name: result[responseKeys.name.rawValue] as! String, uid: result[responseKeys.uid.rawValue] as! String, image_ids: result[responseKeys.image_ids.rawValue] as! [String], image_urls: result[responseKeys.image_urls.rawValue] as! [String], image_urls_thumbnails: result[ responseKeys.image_urls_thumbnails.rawValue] as! [String], imageItem: imageItem))
-            }
+            items.append(SCItem(created_at: result[responseKeys.createdAt.rawValue] as! String, price: result[ responseKeys.price.rawValue] as! String, name: result[responseKeys.name.rawValue] as! String, uid: result[responseKeys.uid.rawValue] as! String, image_ids: result[responseKeys.image_ids.rawValue] as! [String], image_urls: result[responseKeys.image_urls.rawValue] as! [String], image_urls_thumbnails: result[ responseKeys.image_urls_thumbnails.rawValue] as! [String]))
         }
         return items
     }
