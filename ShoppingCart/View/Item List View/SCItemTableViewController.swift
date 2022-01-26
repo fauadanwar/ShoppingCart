@@ -25,7 +25,6 @@ class SCItemTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.clearsSelectionOnViewWillAppear = false
         self.title = NSLocalizedString("List_View_Title", comment: "Title Text for List View NavigationBar")
         self.tableView.accessibilityIdentifier = "ItemTableViewController"
@@ -36,7 +35,7 @@ class SCItemTableViewController: UITableViewController {
     {
         let dataSource = DataSource(tableView: tableView) { tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "SCItemTableViewCell", for: indexPath) as! SCItemTableViewCell
-            cell.configureCell(item: item)
+            cell.configureCell(with: item)
             return cell
         }
         dataSource.defaultRowAnimation = .fade
@@ -76,6 +75,7 @@ class SCItemTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "SCDetailViewSegue", sender: indexPath);
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: - Navigation
