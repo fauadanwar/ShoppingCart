@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2490402DCB0279E2F4F734B1 /* Pods_ShoppingCart_ShoppingCartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD52F84355503D4AB3D939CD /* Pods_ShoppingCart_ShoppingCartUITests.framework */; };
 		AD428DE596428DBCCBCEDC88 /* Pods_ShoppingCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2606E129566761290A7326 /* Pods_ShoppingCartTests.framework */; };
+		B411C70227A15A6500DD7CC5 /* SCImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B411C70127A15A6500DD7CC5 /* SCImageCollectionViewCell.swift */; };
 		B439A1D8278329E000990BA0 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B439A1D7278329E000990BA0 /* FZImageCache */; };
 		B49B45E2273C0F8700C79134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E1273C0F8700C79134 /* AppDelegate.m */; };
 		B49B45E5273C0F8700C79134 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E4273C0F8700C79134 /* SceneDelegate.m */; };
@@ -25,12 +26,12 @@
 		B49B4658273D137000C79134 /* SCItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4657273D137000C79134 /* SCItemTableViewController.swift */; };
 		B49B465C273D25F800C79134 /* SCListItemRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465B273D25F800C79134 /* SCListItemRequestHandler.swift */; };
 		B49B465F273D279C00C79134 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B465E273D279C00C79134 /* Constants.swift */; };
-		B49B4663273D511900C79134 /* SCItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B4659273D15C900C79134 /* SCItemTableViewCell.swift */; };
-		B49B4666273D598700C79134 /* SCItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B4665273D598700C79134 /* SCItemDetailViewController.m */; };
 		B4A64473273D688E00F3D4F5 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = B4A64472273D688E00F3D4F5 /* MBProgressHUD */; };
 		B4A64476273D68A800F3D4F5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B4A64475273D68A800F3D4F5 /* Alamofire */; };
 		B4A64479273D832300F3D4F5 /* ListItemRequestHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A64478273D832300F3D4F5 /* ListItemRequestHandlerTests.swift */; };
 		B4A6447C273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6447B273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift */; };
+		B4AB338F279C434E00EBF4E8 /* SCItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AB338E279C434E00EBF4E8 /* SCItemTableViewCell.m */; };
+		B4AB3391279C52B100EBF4E8 /* SCItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB3390279C52B100EBF4E8 /* SCItemDetailViewController.swift */; };
 		DBE998368EA53015EEE1ABFB /* Pods_ShoppingCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C736E96AD4DD2EA5EFFB89 /* Pods_ShoppingCart.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		3E2606E129566761290A7326 /* Pods_ShoppingCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CDDE769BA258213BAA510D /* Pods-ShoppingCart-ShoppingCartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart-ShoppingCartUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingCart-ShoppingCartUITests/Pods-ShoppingCart-ShoppingCartUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD52F84355503D4AB3D939CD /* Pods_ShoppingCart_ShoppingCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCart_ShoppingCartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B411C70127A15A6500DD7CC5 /* SCImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B49B45DD273C0F8700C79134 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49B45E0273C0F8700C79134 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B49B45E1273C0F8700C79134 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,15 +81,15 @@
 		B49B4650273D0F1500C79134 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		B49B4651273D0F1500C79134 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B49B4657273D137000C79134 /* SCItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemTableViewController.swift; sourceTree = "<group>"; };
-		B49B4659273D15C900C79134 /* SCItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemTableViewCell.swift; sourceTree = "<group>"; };
 		B49B465B273D25F800C79134 /* SCListItemRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCListItemRequestHandler.swift; sourceTree = "<group>"; };
 		B49B465E273D279C00C79134 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		B49B4664273D598700C79134 /* SCItemDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemDetailViewController.h; sourceTree = "<group>"; };
-		B49B4665273D598700C79134 /* SCItemDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCItemDetailViewController.m; sourceTree = "<group>"; };
 		B4A64477273D832200F3D4F5 /* ShoppingCartTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingCartTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		B4A64478273D832300F3D4F5 /* ListItemRequestHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRequestHandlerTests.swift; sourceTree = "<group>"; };
 		B4A6447A273D84D400F3D4F5 /* ShoppingCartUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingCartUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		B4A6447B273D84D400F3D4F5 /* SCItemTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemTableViewControllerTests.swift; sourceTree = "<group>"; };
+		B4AB338D279C434E00EBF4E8 /* SCItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemTableViewCell.h; sourceTree = "<group>"; };
+		B4AB338E279C434E00EBF4E8 /* SCItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCItemTableViewCell.m; sourceTree = "<group>"; };
+		B4AB3390279C52B100EBF4E8 /* SCItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemDetailViewController.swift; sourceTree = "<group>"; };
 		C44440411DC4C8D2207BA1EA /* Pods-ShoppingCartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCartTests.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingCartTests/Pods-ShoppingCartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDA6BD49B14681560394B3C0 /* Pods-ShoppingCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCartTests.release.xcconfig"; path = "Target Support Files/Pods-ShoppingCartTests/Pods-ShoppingCartTests.release.xcconfig"; sourceTree = "<group>"; };
 		F075E5DF1409088BE82B5DC6 /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.release.xcconfig"; path = "Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,7 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				B49B4657273D137000C79134 /* SCItemTableViewController.swift */,
-				B49B4659273D15C900C79134 /* SCItemTableViewCell.swift */,
+				B4AB338D279C434E00EBF4E8 /* SCItemTableViewCell.h */,
+				B4AB338E279C434E00EBF4E8 /* SCItemTableViewCell.m */,
 			);
 			path = "Item List View";
 			sourceTree = "<group>";
@@ -238,8 +241,8 @@
 		B49B4656273D119C00C79134 /* Detail View */ = {
 			isa = PBXGroup;
 			children = (
-				B49B4664273D598700C79134 /* SCItemDetailViewController.h */,
-				B49B4665273D598700C79134 /* SCItemDetailViewController.m */,
+				B4AB3390279C52B100EBF4E8 /* SCItemDetailViewController.swift */,
+				B411C70127A15A6500DD7CC5 /* SCImageCollectionViewCell.swift */,
 			);
 			path = "Detail View";
 			sourceTree = "<group>";
@@ -519,15 +522,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49B45E2273C0F8700C79134 /* AppDelegate.m in Sources */,
-				B49B4663273D511900C79134 /* SCItemTableViewCell.swift in Sources */,
-				B49B4666273D598700C79134 /* SCItemDetailViewController.m in Sources */,
+				B411C70227A15A6500DD7CC5 /* SCImageCollectionViewCell.swift in Sources */,
 				B49B464A273CFA0D00C79134 /* SCItemImage.swift in Sources */,
 				B49B4648273CF66B00C79134 /* SCItem.swift in Sources */,
 				B49B45F3273C0F8900C79134 /* main.m in Sources */,
 				B49B465C273D25F800C79134 /* SCListItemRequestHandler.swift in Sources */,
 				B49B4658273D137000C79134 /* SCItemTableViewController.swift in Sources */,
 				B49B45E5273C0F8700C79134 /* SceneDelegate.m in Sources */,
+				B4AB338F279C434E00EBF4E8 /* SCItemTableViewCell.m in Sources */,
 				B49B465F273D279C00C79134 /* Constants.swift in Sources */,
+				B4AB3391279C52B100EBF4E8 /* SCItemDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
