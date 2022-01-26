@@ -43,10 +43,10 @@ class SCItemTableViewControllerTests: XCTestCase {
     {
         try testTabelCellAndNavigation()
         
-        let priceLabel = app.staticTexts["Price"]
+        let priceLabel = app.staticTexts["Price:"]
         XCTAssertTrue(priceLabel.exists)
 
-        let createdAtLabel = app.staticTexts["Created at"]
+        let createdAtLabel = app.staticTexts["Created at:"]
         XCTAssertTrue(createdAtLabel.exists)
 
         let datelabel = app.staticTexts["2019-02-24 04:04:17.566515"]
@@ -54,15 +54,32 @@ class SCItemTableViewControllerTests: XCTestCase {
 
         let priceValueLabel = app.staticTexts["AED 5"]
         XCTAssertTrue(priceValueLabel.exists)
-
-        let elementsQuery = app.scrollViews.otherElements
-        let image = elementsQuery.images["photo.fill.on.rectangle.fill"]
+               
+        let image = app.collectionViews.cells.children(matching: .other).element
         XCTAssertTrue(image.exists)
+
+        let forwardButton = app.buttons["arrow.forward"]
+        let arrowBackwardButton = app.buttons["arrow.backward"]
+
+        XCTAssertTrue(forwardButton.exists)
+        XCTAssertTrue(forwardButton.isEnabled)
+
+        XCTAssertTrue(arrowBackwardButton.exists)
+        XCTAssertFalse(arrowBackwardButton.isEnabled)
+
+        image.swipeLeft()
+        XCTAssertTrue(arrowBackwardButton.isEnabled)
+        XCTAssertTrue(arrowBackwardButton.isEnabled)
+        
+        forwardButton.tap()
+        XCTAssertFalse(forwardButton.isEnabled)
+
+        arrowBackwardButton.tap()
+        XCTAssertTrue(forwardButton.isEnabled)
         
         let notebookNavigationBar = app.navigationBars["Notebook"]
         XCTAssertTrue(notebookNavigationBar.exists)
 
-        elementsQuery.children(matching: .image).element.tap()
         notebookNavigationBar.buttons["Items"].tap()
         waitFor(object: notebookNavigationBar) { !$0.exists }
         
