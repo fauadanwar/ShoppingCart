@@ -23,24 +23,22 @@ class SCItemDetailViewController: UIViewController {
     @IBOutlet weak var buttonNextImage: UIButton!
     @IBOutlet weak var constraintPageControlHeight: NSLayoutConstraint!
     
-    var item: SCItem?
+    var itemDisplayable: SCItemDisplayable?
     override func viewDidLoad() {
         super.viewDidLoad()
-        item?.images.append(item!.images.first!)
-        item?.images.append(item!.images.first!)
 
-        self.title = item?.name
-        self.labelPrice.text = item?.price
-        self.labelCreatedAtValue.text = item?.created_at
-        self.labelPriceTitle.text = NSLocalizedString("Price_Title", comment: "Title Text for Price Label")
-        self.labelCreatedAtTitle.text = NSLocalizedString("Created_At_Title", comment: "Title Text for Created at")
+        self.title = itemDisplayable?.titleLabelText
+        self.labelPrice.text = itemDisplayable?.priceDetail.value
+        self.labelCreatedAtValue.text = itemDisplayable?.createdAtDetail.value
+        self.labelPriceTitle.text = itemDisplayable?.priceDetail.title
+        self.labelCreatedAtTitle.text = itemDisplayable?.createdAtDetail.title
         self.createImageItemsForSlideShow()
     }
     
     func createImageItemsForSlideShow()
     {
         imageCollectionView.showsHorizontalScrollIndicator = false
-        if item?.images.count == 1
+        if itemDisplayable?.itemImages.count == 1
         {
             viewPageControl.isHidden = true
             constraintPageControlHeight.constant = 0
@@ -48,7 +46,7 @@ class SCItemDetailViewController: UIViewController {
         }
         else
         {
-            pageControlImages.numberOfPages = item!.images.count
+            pageControlImages.numberOfPages = itemDisplayable!.itemImages.count
             pageControlImages.currentPage = 0
             buttonPriviousImage.isEnabled = false
             imageCollectionView.isPagingEnabled = true
@@ -61,16 +59,7 @@ class SCItemDetailViewController: UIViewController {
             layout.invalidateLayout()
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     @IBAction func buttonPriviousImageClicked(_ sender: Any) {
         buttonPriviousImage.isEnabled = true
         buttonNextImage.isEnabled = true
@@ -83,23 +72,25 @@ class SCItemDetailViewController: UIViewController {
         let indexPath = IndexPath(item: current, section: 0)
         imageCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
+    
     @IBAction func buttonNextImageClicked(_ sender: Any) {
         buttonPriviousImage.isEnabled = true
         buttonNextImage.isEnabled = true
         var current = pageControlImages.currentPage
         current += 1
-        if current >= item!.images.count - 1
+        if current >= itemDisplayable!.itemImages.count - 1
         {
             buttonNextImage.isEnabled = false
         }
         let indexPath = IndexPath(item: current, section: 0)
         imageCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
+    
     @IBAction func pageControlImagesValueChaned(_ sender: Any) {
         buttonPriviousImage.isEnabled = true
         buttonNextImage.isEnabled = true
         let current = pageControlImages.currentPage
-        if current >= item!.images.count - 1
+        if current >= itemDisplayable!.itemImages.count - 1
         {
             buttonNextImage.isEnabled = false
         }
@@ -110,6 +101,16 @@ class SCItemDetailViewController: UIViewController {
         let indexPath = IndexPath(item: current, section: 0)
         imageCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 }
 
 extension SCItemDetailViewController: UICollectionViewDelegateFlowLayout
@@ -126,7 +127,7 @@ extension SCItemDetailViewController: UICollectionViewDelegateFlowLayout
         buttonNextImage.isEnabled = true
         let scrollPos = scrollView.contentOffset.x / imageCollectionView.frame.width
         let current = Int(scrollPos)
-        if current >= item!.images.count - 1
+        if current >= itemDisplayable!.itemImages.count - 1
         {
             buttonNextImage.isEnabled = false
         }
@@ -141,12 +142,16 @@ extension SCItemDetailViewController: UICollectionViewDelegateFlowLayout
 extension SCItemDetailViewController: UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return item!.images.count
+        return itemDisplayable!.itemImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SCImageCollectionViewCell", for: indexPath) as! SCImageCollectionViewCell
-        cell.configureCellWithItem(imageItem: self.item!.images[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cellItem = cell as! SCImageCollectionViewCell
+        cellItem.configureCellWithItem(imageItem: self.itemDisplayable!.itemImages[indexPath.item])
     }
 }
