@@ -55,11 +55,6 @@ class ListItemRequestHandlerTests: XCTestCase {
         resultDictionary = nil
         listItemRequestHandler = nil
     }
-
-    func testResponseParsingForItems() throws {
-        let items = listItemRequestHandler.parseResponse(results: resultDictionary)
-        XCTAssertEqual(items.count, 2, "Item parsing is wrong")
-    }
     
     func testFetchListItems() throws {
         let promise = expectation(description: "Items are present")
