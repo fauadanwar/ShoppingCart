@@ -11,6 +11,8 @@
 		AD428DE596428DBCCBCEDC88 /* Pods_ShoppingCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2606E129566761290A7326 /* Pods_ShoppingCartTests.framework */; };
 		B411C70227A15A6500DD7CC5 /* SCImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B411C70127A15A6500DD7CC5 /* SCImageCollectionViewCell.swift */; };
 		B439A1D8278329E000990BA0 /* FZImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = B439A1D7278329E000990BA0 /* FZImageCache */; };
+		B45040CD27BE598F003CA7D4 /* SCItemDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45040CC27BE598F003CA7D4 /* SCItemDisplayable.swift */; };
+		B45040D127BE68B0003CA7D4 /* SCItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45040D027BE68B0003CA7D4 /* SCItems.swift */; };
 		B49B45E2273C0F8700C79134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E1273C0F8700C79134 /* AppDelegate.m */; };
 		B49B45E5273C0F8700C79134 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B45E4273C0F8700C79134 /* SceneDelegate.m */; };
 		B49B45EB273C0F8700C79134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49B45E9273C0F8700C79134 /* Main.storyboard */; };
@@ -59,6 +61,8 @@
 		A7CDDE769BA258213BAA510D /* Pods-ShoppingCart-ShoppingCartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart-ShoppingCartUITests.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingCart-ShoppingCartUITests/Pods-ShoppingCart-ShoppingCartUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD52F84355503D4AB3D939CD /* Pods_ShoppingCart_ShoppingCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCart_ShoppingCartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B411C70127A15A6500DD7CC5 /* SCImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B45040CC27BE598F003CA7D4 /* SCItemDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItemDisplayable.swift; sourceTree = "<group>"; };
+		B45040D027BE68B0003CA7D4 /* SCItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCItems.swift; sourceTree = "<group>"; };
 		B49B45DD273C0F8700C79134 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49B45E0273C0F8700C79134 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B49B45E1273C0F8700C79134 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -204,8 +208,10 @@
 		B49B4616273C0FD000C79134 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B45040D027BE68B0003CA7D4 /* SCItems.swift */,
 				B49B4647273CF66B00C79134 /* SCItem.swift */,
 				B49B4649273CFA0D00C79134 /* SCItemImage.swift */,
+				B45040CC27BE598F003CA7D4 /* SCItemDisplayable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,7 +285,6 @@
 				B49B45D9273C0F8700C79134 /* Sources */,
 				B49B45DA273C0F8700C79134 /* Frameworks */,
 				B49B45DB273C0F8700C79134 /* Resources */,
-				4ADB321B3DA5C4A0DC5E41CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,7 +327,6 @@
 				B49B45FE273C0F8900C79134 /* Sources */,
 				B49B45FF273C0F8900C79134 /* Frameworks */,
 				B49B4600273C0F8900C79134 /* Resources */,
-				B11A3F640E9B28267D4CEAD2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -414,23 +418,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4ADB321B3DA5C4A0DC5E41CB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6C1D587C60D9CB60D0DF4AE9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,23 +484,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B11A3F640E9B28267D4CEAD2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingCart-ShoppingCartUITests/Pods-ShoppingCart-ShoppingCartUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ShoppingCart-ShoppingCartUITests/Pods-ShoppingCart-ShoppingCartUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShoppingCart-ShoppingCartUITests/Pods-ShoppingCart-ShoppingCartUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -522,10 +492,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49B45E2273C0F8700C79134 /* AppDelegate.m in Sources */,
+				B45040D127BE68B0003CA7D4 /* SCItems.swift in Sources */,
 				B411C70227A15A6500DD7CC5 /* SCImageCollectionViewCell.swift in Sources */,
 				B49B464A273CFA0D00C79134 /* SCItemImage.swift in Sources */,
 				B49B4648273CF66B00C79134 /* SCItem.swift in Sources */,
 				B49B45F3273C0F8900C79134 /* main.m in Sources */,
+				B45040CD27BE598F003CA7D4 /* SCItemDisplayable.swift in Sources */,
 				B49B465C273D25F800C79134 /* SCListItemRequestHandler.swift in Sources */,
 				B49B4658273D137000C79134 /* SCItemTableViewController.swift in Sources */,
 				B49B45E5273C0F8700C79134 /* SceneDelegate.m in Sources */,

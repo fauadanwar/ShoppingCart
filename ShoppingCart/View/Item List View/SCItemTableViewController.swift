@@ -90,7 +90,7 @@ class SCItemTableViewController: UITableViewController {
             guard let item = dataSource.itemIdentifier(for: indexPath) else {
               return
             }
-            controller.item = item
+            controller.itemDisplayable = item
         }
     }
     
