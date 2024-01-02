@@ -11,17 +11,17 @@ import FZImageCache
 
 class SCListItemRequestHandler
 {    
-    func fetchListItems(completion: @escaping ([SCItem]?, String?) -> Void)
+    func fetchListItems(completion: @escaping ([SCItemSection]?, String?) -> Void)
     {
-        let request =  AF.request(SCURLs.listItemURL.rawValue)
-        
-        request.responseDecodable(of: SCItems.self) { (response) in
-            guard let results = response.value else
-            {
-                completion(nil, "Failure with API")
-                return
+        AF.request(SCURLs.listItemURL.rawValue)
+            .validate()
+            .responseDecodable(of: SCItemSection.self) { (response) in
+                guard let results = response.value else
+                {
+                    completion(nil, "Failure with API")
+                    return
+                }
+                completion([results], nil)
             }
-            completion(results.items, nil)
-        }
     }
 }

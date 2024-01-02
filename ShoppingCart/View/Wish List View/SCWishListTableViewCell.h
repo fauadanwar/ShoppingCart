@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface SCItemTableViewCell : UITableViewCell
+@interface SCWishListTableViewCell : UITableViewCell
 - (void)configureCellWithItem:(SCItem *)item;
 @end
 

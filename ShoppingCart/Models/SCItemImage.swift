@@ -36,3 +36,20 @@ import Foundation
     }
 
 }
+
+extension SCItemImage
+{
+    static func getSampleImagesOfItemAt(indexOfItem: Int, indexOfImage: Int) -> SCItemImage?
+    {
+        guard let item = SCItem.getSampleItemAt(index: indexOfItem) else
+        {
+            return nil
+        }
+
+        guard item.images.count > indexOfImage else {
+            return nil
+        }
+        
+        return item.images[indexOfItem]
+    }
+}

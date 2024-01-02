@@ -62,20 +62,14 @@ import FZImageCache
     }
 }
 
-extension SCItem: SCItemDisplayable {
-  var titleLabelText: String {
-      name
-  }
-  
-  var priceDetail: (title: String, value: String) {
-    (NSLocalizedString("Price_Title", comment: "Title Text for Price Label"), price)
-  }
-  
-  var createdAtDetail: (title: String, value: String) {
-    (NSLocalizedString("Created_At_Title", comment: "Title Text for Created at"), created_at)
-  }
-  
-  var itemImages: [SCItemImage] {
-      images
-  }
+extension SCItem
+{
+    static func getSampleItemAt(index: Int) -> SCItem?
+    {
+        let resultItems = SCItemSection.getSampleData()
+        guard resultItems.items.count > index else {
+            return nil
+        }
+        return resultItems.items[index]
+    }
 }
