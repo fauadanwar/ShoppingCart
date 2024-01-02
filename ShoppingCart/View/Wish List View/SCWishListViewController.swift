@@ -9,7 +9,7 @@ import UIKit
 import FZImageCache
 import MBProgressHUD
 
-class SCItemTableViewController: UITableViewController {
+class SCWishListViewController: UITableViewController {
     
     enum Section {
       case main
@@ -27,14 +27,14 @@ class SCItemTableViewController: UITableViewController {
         super.viewDidLoad()
         self.clearsSelectionOnViewWillAppear = false
         self.title = NSLocalizedString("List_View_Title", comment: "Title Text for List View NavigationBar")
-        self.tableView.accessibilityIdentifier = "ItemTableViewController"
+        self.tableView.accessibilityIdentifier = "SCWishListViewController"
         generateItems()
     }
      
     func setupDataSource() -> DataSource
     {
         let dataSource = DataSource(tableView: tableView) { tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SCItemTableViewCell", for: indexPath) as! SCItemTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SCWishListTableViewCell", for: indexPath) as! SCWishListTableViewCell
             cell.configureCell(with: item)
             return cell
         }
@@ -62,7 +62,7 @@ class SCItemTableViewController: UITableViewController {
                 }
                 if let listItems = items
                 {
-                    self.listItems = listItems
+                    self.listItems = listItems.first!.items
                     self.applySnapshot()
                 }
                 else if let message = errorString
@@ -82,17 +82,13 @@ class SCItemTableViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if (segue.identifier == "SCDetailViewSegue") {
             let controller = segue.destination as! SCItemDetailViewController
             let indexPath = (sender as! IndexPath); //we know that sender is an NSIndexPath here.
             guard let item = dataSource.itemIdentifier(for: indexPath) else {
               return
             }
-            controller.itemDisplayable = item
+            controller.item = item
         }
     }
-    
-    
 }

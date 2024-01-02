@@ -5,11 +5,11 @@
 //  Created by Fauad Anwar on 22/01/22.
 //
 
-#import "SCItemTableViewCell.h"
+#import "SCWishListTableViewCell.h"
 #import "FZImageCache/FZImageCache.h"
 #import "ShoppingCart-Swift.h"
 
-@interface SCItemTableViewCell()
+@interface SCWishListTableViewCell()
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewItem;
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 @property (weak, nonatomic) IBOutlet UILabel *labelPriceTitle;
@@ -17,7 +17,7 @@
 @property (strong, nonatomic) SCItem *item;
 @end
 
-@implementation SCItemTableViewCell
+@implementation SCWishListTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -43,7 +43,7 @@
         if (imageItem != nil)
         {
             NSURL *url = [NSURL URLWithString:imageItem];
-            __weak SCItemTableViewCell *weakSelf = self;
+            __weak SCWishListTableViewCell *weakSelf = self;
             [ImageCache.publicCache loadWithUrl:url itemIdentifier:item completion:^(NSObject * recivedItem, UIImage * image)
              {
                 if (weakSelf.item == recivedItem)

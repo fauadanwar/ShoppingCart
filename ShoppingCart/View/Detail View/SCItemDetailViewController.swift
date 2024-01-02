@@ -23,22 +23,23 @@ class SCItemDetailViewController: UIViewController {
     @IBOutlet weak var buttonNextImage: UIButton!
     @IBOutlet weak var constraintPageControlHeight: NSLayoutConstraint!
     
-    var itemDisplayable: SCItemDisplayable?
+    var item: SCItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = itemDisplayable?.titleLabelText
-        self.labelPrice.text = itemDisplayable?.priceDetail.value
-        self.labelCreatedAtValue.text = itemDisplayable?.createdAtDetail.value
-        self.labelPriceTitle.text = itemDisplayable?.priceDetail.title
-        self.labelCreatedAtTitle.text = itemDisplayable?.createdAtDetail.title
+        self.title = item?.name
+        self.labelPrice.text = item?.price
+        self.labelCreatedAtValue.text = item?.created_at
+        self.labelPriceTitle.text = NSLocalizedString("Price_Title", comment: "Title Text for Price Label")
+        self.labelCreatedAtTitle.text = NSLocalizedString("Created_At_Title", comment: "Title Text for Created at")
         self.createImageItemsForSlideShow()
     }
     
     func createImageItemsForSlideShow()
     {
         imageCollectionView.showsHorizontalScrollIndicator = false
-        if itemDisplayable?.itemImages.count == 1
+        if item?.images.count == 1
         {
             viewPageControl.isHidden = true
             constraintPageControlHeight.constant = 0
@@ -46,7 +47,7 @@ class SCItemDetailViewController: UIViewController {
         }
         else
         {
-            pageControlImages.numberOfPages = itemDisplayable!.itemImages.count
+            pageControlImages.numberOfPages = item!.images.count
             pageControlImages.currentPage = 0
             buttonPriviousImage.isEnabled = false
             imageCollectionView.isPagingEnabled = true
@@ -78,7 +79,7 @@ class SCItemDetailViewController: UIViewController {
         buttonNextImage.isEnabled = true
         var current = pageControlImages.currentPage
         current += 1
-        if current >= itemDisplayable!.itemImages.count - 1
+        if current >= item!.images.count - 1
         {
             buttonNextImage.isEnabled = false
         }
@@ -90,7 +91,7 @@ class SCItemDetailViewController: UIViewController {
         buttonPriviousImage.isEnabled = true
         buttonNextImage.isEnabled = true
         let current = pageControlImages.currentPage
-        if current >= itemDisplayable!.itemImages.count - 1
+        if current >= item!.images.count - 1
         {
             buttonNextImage.isEnabled = false
         }
@@ -127,7 +128,7 @@ extension SCItemDetailViewController: UICollectionViewDelegateFlowLayout
         buttonNextImage.isEnabled = true
         let scrollPos = scrollView.contentOffset.x / imageCollectionView.frame.width
         let current = Int(scrollPos)
-        if current >= itemDisplayable!.itemImages.count - 1
+        if current >= item!.images.count - 1
         {
             buttonNextImage.isEnabled = false
         }
@@ -142,7 +143,7 @@ extension SCItemDetailViewController: UICollectionViewDelegateFlowLayout
 extension SCItemDetailViewController: UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemDisplayable!.itemImages.count
+        return item!.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -152,6 +153,6 @@ extension SCItemDetailViewController: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let cellItem = cell as! SCImageCollectionViewCell
-        cellItem.configureCellWithItem(imageItem: self.itemDisplayable!.itemImages[indexPath.item])
+        cellItem.configureCellWithItem(imageItem: self.item!.images[indexPath.item])
     }
 }
