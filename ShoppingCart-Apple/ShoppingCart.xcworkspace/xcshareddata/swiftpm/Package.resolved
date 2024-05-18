@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": "master",
+          "revision": "f82c23a8a7ef8dc1a49a8bfc6a96883e79121864",
+          "version": null
+        }
+      },
+      {
+        "package": "FZImageCache",
+        "repositoryURL": "https://github.com/fauadanwar/FZImageCache",
+        "state": {
+          "branch": "master",
+          "revision": "39cfaf89b2ed9b901007ac34459e8ee542e249e4",
+          "version": null
+        }
+      },
+      {
+        "package": "MBProgressHUD",
+        "repositoryURL": "https://github.com/jdg/MBProgressHUD.git",
+        "state": {
+          "branch": "master",
+          "revision": "c843e4c86d320a11552898646effa8000042ab16",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
